@@ -5,6 +5,7 @@
  */
 package modelo;
 
+import java.util.List;
 /**
  *
  * @author wagner
@@ -13,18 +14,22 @@ public class Vagao {
     public int codigo;
     public int anoFabricacao;
     public int carga;
+    public int nunVagao; // numero do vagao deve ser do vagao e nao do trem
     public float peso;
+    public String destinoVagao;
 
-    public Vagao(int codigo, int anoFabricacao, int carga, float peso) {
-        this.codigo = codigo;
-        this.anoFabricacao = anoFabricacao;
-        this.carga = carga;
-        this.peso = peso;
-    }
-
+    
     public Vagao() {
     }
+    
+    public int getNunVagao() {
+        return nunVagao;
+    }
 
+    public void setNunVagao(int nunVagao) {
+        this.nunVagao = nunVagao;
+    } 
+    
     public int getCodigo() {
         return codigo;
     }

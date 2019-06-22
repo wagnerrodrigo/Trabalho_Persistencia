@@ -4,27 +4,30 @@
  * and open the template in the editor.
  */
 package modelo;
-
 /**
  *
  * @author wagner
  */
 public class Trem {
+    public int numero;
     public String apelido;
     public int maxVagao;
     public int nunVagao;
     public float pesoTotalVagao;
-
-    public Trem(String apelido, int maxVagao, int nunVagao, float pesoTotalVagao) {
-        this.apelido = apelido;
-        this.maxVagao = maxVagao;
-        this.nunVagao = nunVagao;
-        this.pesoTotalVagao = pesoTotalVagao;
-    }
-
+    
     public Trem() {
+        
+    } 
+    
+    public int getNumero() {
+        return numero;
     }
 
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
+
+    
     public String getApelido() {
         return apelido;
     }
@@ -56,7 +59,6 @@ public class Trem {
     public void setPesoTotalVagao(float pesoTotalVagao) {
         this.pesoTotalVagao = pesoTotalVagao;
     }
-    
     
     
 }
