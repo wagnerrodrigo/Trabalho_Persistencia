@@ -38,6 +38,11 @@ public class Principal extends javax.swing.JInternalFrame {
         jm_Cadas.setText("Cadastrar");
 
         btn_Cadas_Trem.setText("Trem");
+        btn_Cadas_Trem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_Cadas_TremActionPerformed(evt);
+            }
+        });
         jm_Cadas.add(btn_Cadas_Trem);
 
         btn_Cadas_Vagao.setText("Vagão");
@@ -63,6 +68,11 @@ public class Principal extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_Cadas_TremActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Cadas_TremActionPerformed
+        // TODO add your handling code here:
+        new Trem().setVisible(true);
+    }//GEN-LAST:event_btn_Cadas_TremActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
