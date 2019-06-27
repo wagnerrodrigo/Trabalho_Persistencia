@@ -8,19 +8,91 @@ package Controller;
 import java.util.List;
 import modelo.Trem;
 import DAO.TremDAO;
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
+import java.util.ArrayList;
+import org.jdesktop.observablecollections.ObservableCollections;
 
-import modelo.Vagao;
 
 /**
  *
  * @author wagner
  */
 public class TremController {
-    
-    public List<Vagao> listaVagoes;
+    private final PropertyChangeSupport propertyChangeSupport = new PropertyChangeSupport(this);  
+    private Trem tremDigitado;
+    private Trem tremSelecionados;
     public List<Trem> listaTrens;
+    private final TremDAO tremdao ;
 
+    public TremController() {
+        tremdao = new TremDAO();
+        listaTrens = ObservableCollections.observableList(new ArrayList<Trem>());
+        novo();
+        pesquisar();
+        
+    }
+    
+    
+    public void salvar(){
+        tremdao.salvaTrem(tremDigitado);
+        novo();
+        pesquisar();
+    }
+    
+    public void excluir(){
+        tremdao.excluirTrem(tremDigitado);
+        novo();
+        pesquisar();
+    }
      
+    
+    public void novo(){
+        setTremDigitado(new Trem());
+    }
+    
+    public void pesquisar(){
+        listaTrens.clear();
+        listaTrens.addAll(tremdao.pesquisar(tremDigitado));
+    }
+    
+    
+    // set e get 
+
+    public Trem getTremDigitado() {
+        return tremDigitado;
+    }
+
+    public void setTremDigitado(Trem tremDigitado) {
+        Trem tremAntigo = this.tremDigitado;
+        this.tremDigitado = tremDigitado;
+        propertyChangeSupport.firePropertyChange("TremTXT",tremAntigo,tremDigitado);
+        
+    }
+
+    public Trem getTremSelecionados() {
+        return tremSelecionados;
+    }
+
+    public void setTremSelecionados(Trem tremSelecionados) {
+        if(this.tremSelecionados !=null){
+            setTremDigitado(tremSelecionados);
+        }
+        this.tremSelecionados = tremSelecionados;
+    }
+
+    public List<Trem> getListaTrens() {
+        return listaTrens;
+    }
+
+    public void setListaTrens(List<Trem> listaTrens) {
+        this.listaTrens = listaTrens;
+    }
+    
+    
+    
+    
+    
     
     public void inserirTrens (Trem trem){
         listaTrens.add(trem);
@@ -39,12 +111,13 @@ public class TremController {
     }
     
     
-    public Vagao buscarVagao(int numV){
-        Vagao va = null;
-        for(Vagao vagao:listaVagoes){
-            if(vagao.getNunVagao() == numV)
-                va = vagao;
-        }
-        return va;
+    public void addPropertyChangeListener(PropertyChangeListener e) {
+        propertyChangeSupport.addPropertyChangeListener(e);
     }
+    
+    public void removePropertyChangeListener(PropertyChangeListener e) {
+        propertyChangeSupport.removePropertyChangeListener(e);
+    }
+    
+   
 }

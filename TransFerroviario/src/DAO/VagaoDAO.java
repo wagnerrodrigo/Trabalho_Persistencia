@@ -5,6 +5,7 @@
  */
 package DAO;
 
+import java.util.List;
 import javax.persistence.EntityManager;
 import modelo.Vagao;
 
@@ -33,4 +34,7 @@ public class VagaoDAO {
                      em.getTransaction().commit();
                      em.close();   
    }
+     
+      public List<Vagao> pesquisar(Vagao vagao){
+      EntityManager em = Conexao.getEntityManager();
 }

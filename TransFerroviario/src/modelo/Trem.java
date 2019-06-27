@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package modelo;
+import java.io.Serializable;
 import javax.annotation.Generated;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,7 +18,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table (name="TB_Trem")
-public class Trem {
+public class Trem implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) 
     private int numero;

@@ -5,6 +5,13 @@
  */
 package transferroviario;
 
+
+import modelo.Trem;
+import modelo.Vagao;
+import javax.persistence.Persistence;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityManager;
+
 /**
  *
  * @author wagner
@@ -16,6 +23,21 @@ public class TransFerroviario {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Trem trem = new Trem();
+        trem.setApelido("wagner");
+        
+        Vagao vagao = new Vagao();
+        vagao.setCarga(1);
+        
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("TransFerroviarioPU");
+        EntityManager em = emf.createEntityManager();
+        
+        em.getTransaction().begin();
+        em.persist(trem);
+        em.getTransaction().commit();
+        
+        em.clear();
+
     }
     
 }
