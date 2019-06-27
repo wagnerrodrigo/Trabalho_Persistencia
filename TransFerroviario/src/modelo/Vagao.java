@@ -6,16 +6,30 @@
 package modelo;
 
 import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 /**
  *
  * @author wagner
  */
+
+@Entity
+@Table (name="TB_Vagao")
 public class Vagao {
-    public int codigo;
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int codigo;
+    
     public int anoFabricacao;
     public int carga;
     public int nunVagao; // numero do vagao deve ser do vagao e nao do trem
     public float peso;
+    
+    
     public String destinoVagao;
 
     
