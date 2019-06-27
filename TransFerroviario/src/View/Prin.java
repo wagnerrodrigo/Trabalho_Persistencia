@@ -27,22 +27,19 @@ public class Prin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jm_Cadas = new javax.swing.JMenu();
         btn_Cadas_Trem = new javax.swing.JMenuItem();
         btn_Cadas_Vagao = new javax.swing.JMenuItem();
+        btn_Sair_Sistema = new javax.swing.JMenuItem();
         jm_Consulta = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Sistema Transporte Ferroviario");
 
-        jButton1.setText("Sair");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/transporte-ferroviario-setor-debate-inov_7403.jpg"))); // NOI18N
 
         jm_Cadas.setText("Cadastrar");
 
@@ -61,6 +58,14 @@ public class Prin extends javax.swing.JFrame {
             }
         });
         jm_Cadas.add(btn_Cadas_Vagao);
+
+        btn_Sair_Sistema.setText("Sair do Sistema");
+        btn_Sair_Sistema.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_Sair_SistemaActionPerformed(evt);
+            }
+        });
+        jm_Cadas.add(btn_Sair_Sistema);
 
         jMenuBar1.add(jm_Cadas);
 
@@ -82,17 +87,17 @@ public class Prin extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(327, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(242, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -104,11 +109,6 @@ public class Prin extends javax.swing.JFrame {
         new Trem().setVisible(true);
     }//GEN-LAST:event_btn_Cadas_TremActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        this.dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     private void btn_Cadas_VagaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Cadas_VagaoActionPerformed
         // TODO add your handling code here:
         new Vagao().setVisible(true);
@@ -118,6 +118,11 @@ public class Prin extends javax.swing.JFrame {
         // TODO add your handling code here:
         new Consulta().setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void btn_Sair_SistemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Sair_SistemaActionPerformed
+        // TODO add your handling code here:
+         this.dispose();
+    }//GEN-LAST:event_btn_Sair_SistemaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -157,7 +162,8 @@ public class Prin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem btn_Cadas_Trem;
     private javax.swing.JMenuItem btn_Cadas_Vagao;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JMenuItem btn_Sair_Sistema;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenu jm_Cadas;
