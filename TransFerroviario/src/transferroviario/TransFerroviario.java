@@ -37,6 +37,7 @@ public class TransFerroviario {
         em.getTransaction().commit();
         
         em.clear();
+        em.close();
 
     }
     

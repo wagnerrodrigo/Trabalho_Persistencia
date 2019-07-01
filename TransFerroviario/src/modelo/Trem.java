@@ -20,12 +20,16 @@ import javax.persistence.Table;
 @Table (name="TB_Trem")
 public class Trem implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) 
+    @GeneratedValue(strategy = GenerationType.AUTO) 
     private int numero;
     
+    @Column
     public String apelido;
+    @Column
     public int maxVagao;
+    @Column
     public int nunVagao;
+    @Column
     public float pesoTotalVagao;
     
     public Trem() {

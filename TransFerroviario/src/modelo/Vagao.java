@@ -7,6 +7,7 @@ package modelo;
 
 import java.io.Serializable;
 import java.util.List;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,12 +23,16 @@ import javax.persistence.Table;
 public class Vagao implements Serializable {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int codigo;
     
+    @Column
     public int anoFabricacao;
+    @Column
     public int carga;
+    @Column
     public int nunVagao; // numero do vagao deve ser do vagao e nao do trem
+    @Column
     public float peso;
     
     

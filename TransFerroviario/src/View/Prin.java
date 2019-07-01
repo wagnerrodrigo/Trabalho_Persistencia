@@ -35,6 +35,7 @@ public class Prin extends javax.swing.JFrame {
         btn_Sair_Sistema = new javax.swing.JMenuItem();
         jm_Consulta = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sistema Transporte Ferroviario");
@@ -71,13 +72,21 @@ public class Prin extends javax.swing.JFrame {
 
         jm_Consulta.setText("Informações");
 
-        jMenuItem1.setText("Consulta");
+        jMenuItem1.setText("Consultar Trens");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem1ActionPerformed(evt);
             }
         });
         jm_Consulta.add(jMenuItem1);
+
+        jMenuItem2.setText("Consultar Vagões");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jm_Consulta.add(jMenuItem2);
 
         jMenuBar1.add(jm_Consulta);
 
@@ -116,13 +125,19 @@ public class Prin extends javax.swing.JFrame {
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
-        new Consulta().setVisible(true);
+        new ConsultaTrens().setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void btn_Sair_SistemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Sair_SistemaActionPerformed
         // TODO add your handling code here:
          this.dispose();
     }//GEN-LAST:event_btn_Sair_SistemaActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+        Vagao vagao = new Vagao();
+        new ConsultaVagao().setVisible(true);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -166,6 +181,7 @@ public class Prin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenu jm_Cadas;
     private javax.swing.JMenu jm_Consulta;
     // End of variables declaration//GEN-END:variables

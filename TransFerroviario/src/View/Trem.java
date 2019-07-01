@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package View;
+import Controller.TremController;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -11,10 +13,15 @@ package View;
  */
 public class Trem extends javax.swing.JFrame {
 
+    private final TremController tremcontrol;
     /**
      * Creates new form Trem
      */
+    public TremController getTremController(){
+        return tremcontrol;
+    }
     public Trem() {
+        tremcontrol = new TremController();
         initComponents();
     }
 
@@ -40,7 +47,7 @@ public class Trem extends javax.swing.JFrame {
         jTextField3 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
         jTextField5 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        btn_salva = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -75,7 +82,12 @@ public class Trem extends javax.swing.JFrame {
 
         jLabel5.setText("Peso do Vagões:");
 
-        jButton1.setText("Salvar");
+        btn_salva.setText("Salvar");
+        btn_salva.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_salvaActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Cancelar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -119,7 +131,7 @@ public class Trem extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(jButton1)
+                    .addComponent(btn_salva)
                     .addGap(347, 347, 347)
                     .addComponent(jButton2)
                     .addContainerGap(12, Short.MAX_VALUE)))
@@ -148,7 +160,7 @@ public class Trem extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(129, 129, 129)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton1)
+                        .addComponent(btn_salva)
                         .addComponent(jButton2))
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
@@ -197,6 +209,12 @@ public class Trem extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void btn_salvaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salvaActionPerformed
+        // TODO add your handling code here:
+        tremcontrol.salvar();
+        JOptionPane.showMessageDialog(this,"Trem Salvo com Sucesso","Salvar Trem", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_btn_salvaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -233,7 +251,7 @@ public class Trem extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btn_salva;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

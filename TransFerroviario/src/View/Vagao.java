@@ -4,17 +4,25 @@
  * and open the template in the editor.
  */
 package View;
-
+import Controller.VagaoController;
+import javax.swing.JOptionPane;
 /**
  *
  * @author wagner
  */
 public class Vagao extends javax.swing.JFrame {
 
+    private final VagaoController vagaocontroller;
+    
+    public VagaoController getVagaoController(){
+        return vagaocontroller;
+}
+    
     /**
      * Creates new form Vagao
      */
     public Vagao() {
+        vagaocontroller = new VagaoController();
         initComponents();
     }
 
@@ -64,6 +72,11 @@ public class Vagao extends javax.swing.JFrame {
         jComboBox2.setSelectedIndex(-1);
 
         jButton1.setText("Salvar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Cancelar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -159,6 +172,12 @@ public class Vagao extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        vagaocontroller.salvar();
+         JOptionPane.showMessageDialog(this, "Vagao Salvo com Sucesso","Salvar Vagao",JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
