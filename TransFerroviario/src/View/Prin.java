@@ -11,6 +11,10 @@ package View;
  */
 public class Prin extends javax.swing.JFrame {
 
+    Trem tren = new Trem();
+    Vagao vagao = new Vagao();
+    ConsultaTrens consTren = new ConsultaTrens();
+    ConsultaVagao consVagao = new ConsultaVagao();
     /**
      * Creates new form Prin
      */
@@ -34,8 +38,8 @@ public class Prin extends javax.swing.JFrame {
         btn_Cadas_Vagao = new javax.swing.JMenuItem();
         btn_Sair_Sistema = new javax.swing.JMenuItem();
         jm_Consulta = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        btn_Consulta_Trens = new javax.swing.JMenuItem();
+        btn_Consulta_Vagoes = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sistema Transporte Ferroviario");
@@ -72,21 +76,21 @@ public class Prin extends javax.swing.JFrame {
 
         jm_Consulta.setText("Informações");
 
-        jMenuItem1.setText("Consultar Trens");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        btn_Consulta_Trens.setText("Consultar Trens");
+        btn_Consulta_Trens.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                btn_Consulta_TrensActionPerformed(evt);
             }
         });
-        jm_Consulta.add(jMenuItem1);
+        jm_Consulta.add(btn_Consulta_Trens);
 
-        jMenuItem2.setText("Consultar Vagões");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        btn_Consulta_Vagoes.setText("Consultar Vagões");
+        btn_Consulta_Vagoes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                btn_Consulta_VagoesActionPerformed(evt);
             }
         });
-        jm_Consulta.add(jMenuItem2);
+        jm_Consulta.add(btn_Consulta_Vagoes);
 
         jMenuBar1.add(jm_Consulta);
 
@@ -115,29 +119,28 @@ public class Prin extends javax.swing.JFrame {
 
     private void btn_Cadas_TremActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Cadas_TremActionPerformed
         // TODO add your handling code here:
-        new Trem().setVisible(true);
+        tren.setVisible(true);
     }//GEN-LAST:event_btn_Cadas_TremActionPerformed
 
     private void btn_Cadas_VagaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Cadas_VagaoActionPerformed
         // TODO add your handling code here:
-        new Vagao().setVisible(true);
+        vagao.setVisible(true);
     }//GEN-LAST:event_btn_Cadas_VagaoActionPerformed
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void btn_Consulta_TrensActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Consulta_TrensActionPerformed
         // TODO add your handling code here:
-        new ConsultaTrens().setVisible(true);
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+        consTren.setVisible(true);
+    }//GEN-LAST:event_btn_Consulta_TrensActionPerformed
 
     private void btn_Sair_SistemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Sair_SistemaActionPerformed
         // TODO add your handling code here:
          this.dispose();
     }//GEN-LAST:event_btn_Sair_SistemaActionPerformed
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+    private void btn_Consulta_VagoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Consulta_VagoesActionPerformed
         // TODO add your handling code here:
-        Vagao vagao = new Vagao();
-        new ConsultaVagao().setVisible(true);
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+        consVagao.setVisible(true);
+    }//GEN-LAST:event_btn_Consulta_VagoesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -177,11 +180,11 @@ public class Prin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem btn_Cadas_Trem;
     private javax.swing.JMenuItem btn_Cadas_Vagao;
+    private javax.swing.JMenuItem btn_Consulta_Trens;
+    private javax.swing.JMenuItem btn_Consulta_Vagoes;
     private javax.swing.JMenuItem btn_Sair_Sistema;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenu jm_Cadas;
     private javax.swing.JMenu jm_Consulta;
     // End of variables declaration//GEN-END:variables
